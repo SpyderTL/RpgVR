@@ -6,11 +6,21 @@ namespace RpgVR
 	{
 		internal static void Start()
 		{
-			//Headset.Enable();
+			OpenVRRoom.Enable();
 
-			//FinalFantasyRom.Load();
+			LoadingRoom.Show();
 
-			//GamePlayer.Start();
+			NesFile.Load("Final Fantasy (U).nes");
+
+			FinalFantasyGame.Load();
+
+			LoadingRoom.Hide();
+
+			GamePlayer.Start();
+
+			GameRoom.Run();
+
+			OpenVRRoom.Disable();
 		}
 	}
 }
